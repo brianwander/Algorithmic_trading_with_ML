@@ -37,7 +37,7 @@ Training on six months of data yielded 30% higher returns!
 
 The short SMA window was also modified from 4 days to 50 days to see if returns would improve and the results are plotted below:
 
-[!SVC_Returns_50dSMA.PNG](SVC_Returns_50dSMA.PNG)
+![SVC_Returns_50dSMA.PNG](SVC_Returns_50dSMA.PNG)
 
 Now the model is underperforming, so the short window was kept at 4 days,
 Modifying the short SMA window did not improve results, but the increased number of training days was maintained at 6 months.
