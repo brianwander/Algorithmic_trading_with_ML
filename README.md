@@ -24,7 +24,21 @@ The code runs directly in the jupyter notebook. Data are first read from the csv
 The data are split between training and testing, where the first three months are used to train the machine learning models and the rest of the days are predicted on. The training data is then scaled and the models are fit to it. Predictions are then generated, as well as classification reports. Returns from each strategy are plotted against the baseline strategy as well.
 
 ## Results
-The returns from each of the models compared to the baseline are plotted below:
+
+### Model tuning 
+The SVC model was first trained on three months of data to obtain a baseline. The returns were plotted against actual returns from holding the stock in the following plot:
+[!SVC_Returns.PNG]
+The model was then retrained on six months of data to see if the returns could be improved.
+[!SVC_Returns_6_months.PNG]
+Training on six months of data yielded 30% higher returns!
+
+The short SMA window was also modified from 4 days to 50 days to see if returns would improve and the results are plotted below
+[!SVC_Returns_50dSMA.PNG]
+Now the model is underperforming, so the short window was kept at 4 days,
+Modifying the short SMA window did not improve results, but the increased number of training days was maintained at 6 months.
+
+### Model Comparison
+The returns from each of the models compared to the actual returns are plotted below:
 
 [!RF_Returns.PNG]
 [!SVC_Returns.PNG]
@@ -38,7 +52,7 @@ The classification report for the random forest model is below:
 And the classification report for the SVC model is as follows:
 [!SVM_classification_report.PNG]
 
-The accuracy for both models is comparable at 52% for the random forest and 55% for the support vector classifier, but the random forest model performs slightly worse overall. The random forest model is much better than the SVC model at predicting when the price will fall with much higher recall and precision for the short signals, at the cost of worse performance when predicting buy signals. 
+The accuracy of the models was 49% for the random forest and 56% for the support vector classifier, indicating that the random forest model performs worse overall. Despite the worse overall performance, the random forest model is much better than the SVC model at predicting when the price will fall with much higher recall and precision for the short signals, at the cost of worse performance when predicting buy signals. 
 
 ## Contributors
 
